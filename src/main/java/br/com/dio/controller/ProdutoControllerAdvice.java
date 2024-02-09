@@ -12,17 +12,7 @@ import java.util.Map;
 
 @ControllerAdvice
 public class ProdutoControllerAdvice extends ResponseEntityExceptionHandler {
-
-    @ExceptionHandler(ProductNullException.class)
-    public ResponseEntity<Object> erro(){
-
-        Map<String, Object> body = new HashMap<String, Object>();
-
-        body.put("message", "Ocorreu um erro genérico");
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
-    }
-
+    
     @ExceptionHandler(ProductNullException.class)
     public ResponseEntity<Object> capturaErroNull(){
 
